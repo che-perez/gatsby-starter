@@ -1,5 +1,5 @@
 ---
-path: test-path
+path: /blog/test-path
 date: 2019-08-22T22:32:48.912Z
 title: Esto Es Una Prueba
 ---
