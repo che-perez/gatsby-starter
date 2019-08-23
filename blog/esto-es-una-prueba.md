@@ -10,5 +10,6 @@ items:
   - name: Apple
   - name: Melon
   - name: Peach
+  - name: Oranges
 ---
 Esto Es Una Prueba para corrobar que netlify cms esta funcionando correctamente.
