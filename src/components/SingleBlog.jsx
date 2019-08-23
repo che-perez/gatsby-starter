@@ -8,18 +8,26 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
-  console.log(data);
+  const blog  = frontmatter;
+  console.log(blog);
   return (
     <div className="blog-post-container">
       <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
+        <h1>{blog.title}</h1>
+        <h2>{blog.date}</h2>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
-      { frontmatter.isimage ? <img alt='' src={frontmatter.image}></img> : <p>No Image</p> }
+      { blog.isimage ? <img alt='' src={blog.image}></img> : <p>No Image</p> }
+      <ul>
+        { blog.items.map((item, index) => {
+          return (
+            <li key={ index }>{ item.name }</li>
+          )
+        })}
+      </ul>
     </div>
   )
 }
@@ -34,6 +42,9 @@ export const pageQuery = graphql`
         title
         isimage
         image
+        items {
+          name
+        }
       }
     }
   }
