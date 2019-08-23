@@ -19,6 +19,7 @@ export default function Template({
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
+      { frontmatter.isimage ? <img alt='' src={frontmatter.image}></img> : <p>No Image</p> }
     </div>
   )
 }
@@ -31,6 +32,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        isimage
+        image
       }
     }
   }
