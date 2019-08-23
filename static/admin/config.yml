@@ -15,3 +15,5 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+      - { name: isimage, label: IsImage, widget: boolean }
+      - { name: image, label: Image, widget: image }
