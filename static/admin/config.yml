@@ -17,4 +17,10 @@ collections:
       - { name: body, label: Body, widget: markdown }
       - { name: isimage, label: IsImage, widget: boolean }
       - { name: image, label: Image, widget: image }
-      - { name: items, label: Items, singular_label: Item, widget: list, hint: List of Items }
+      - name: items
+        label: Items
+        singular_label: Item
+        widget: list
+        hint: List of Items
+        fields:
+          - { name: name, label: Name, widget: string }
